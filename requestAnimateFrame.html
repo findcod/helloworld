@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			body {
+			  overflow:hidden;
+			}
+			#SomeElementYouWantToAnimate{
+				width: 1000px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="SomeElementYouWantToAnimate"></div>
+		<script type="text/javascript">
+				
+				function downcount(deadline,done,callback){
+					var deadlinetimestamp=new Date(deadline).getTime();
+					var icount = 0;
+					function step(timestamp) { 
+					  var nowtimestamp=new Date().getTime();
+					  var diff=deadlinetimestamp-nowtimestamp;
+					  icount++;
+					  if(icount>5){
+					  	if(diff<0){
+					  		callback();return false;
+					  	}else{
+					  		icount=0;
+					  		done(diff);
+					  	}
+					  }
+					  requestAnimationFrame(step);
+					}
+					requestAnimationFrame(step);
+				}
+				var endtime="12/13/2016 20:11:03";
+				downcount(endtime,function(difference){
+					var _second = 1000,
+					_minute = _second * 60,
+					_hour = _minute * 60;
+					var hours = Math.floor(difference / _hour),
+					minutes = Math.floor((difference % _hour) / _minute),
+						seconds = Math.floor((difference % _minute) / _second);
+					//ms=(difference % _minute) / _second-seconds;
+					ms = Math.floor((difference % _minute % 1000) / 100);
+					// fix dates so that it will show two digets
+					hours = (String(hours).length >= 2) ? hours : '0' + hours;
+					minutes = (String(minutes).length >= 2) ? minutes : '0' + minutes;
+					seconds = (String(seconds).length >= 2) ? seconds : '0' + seconds;
+					ms = (String(ms).length >= 1) ? ms : '0' + ms;
+					console.log(seconds);
+				},function(){
+					console.log("已结束");
+				});
+		</script>
+	</body>
+
+</html>
