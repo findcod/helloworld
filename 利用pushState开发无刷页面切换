@@ -1,0 +1,47 @@
+相关文档：https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulatingthebrowser_history
+
+实现目标
+
+页面的跳转（前进后退，点击等）不重新请求页面
+页面URL与页面展现内容一致（符合人们对传统网页的认识）
+在不支持的浏览器下降级成传统网页的方式
+使用到的API
+
+history.state
+
+当前URL下对应的状态信息。如果当前URL不是通过pushState或者replaceState产生的，那么history.state是null。
+
+history.pushState(state, title, url)
+
+将当前URL和history.state加入到history中，并用新的state和URL替换当前。不会造成页面刷新。
+
+state：与要跳转到的URL对应的状态信息。
+
+title：不知道干啥用，传空字符串就行了。
+
+url：要跳转到的URL地址，不能跨域。
+
+history.replaceState
+
+用新的state和URL替换当前。不会造成页面刷新。
+
+state：与要跳转到的URL对应的状态信息。
+
+title：不知道干啥用，传空字符串就行了。
+
+url：要跳转到的URL地址，不能跨域。
+
+window.onpopstate
+
+history.go和history.back（包括用户按浏览器历史前进后退按钮）触发，并且页面无刷的时候（由于使用pushState修改了history）会触发popstate事件，事件发生时浏览器会从history中取出URL和对应的state对象替换当前的URL和history.state。通过event.state也可以获取history.state。
+
+支持性判断
+
+if ('pushState' in history) {...}
+
+实现思路
+
+用户通过“点击触发”，“操作历史”，“直接访问URL”的方式修改当前URL。这三种触发方式会使浏览器做出不同的行为。如果页面做无刷跳转，那么页面具体显示什么内容需要js来控制，js则需要根据一些信息来知道当前应该显示什么内容，这个信息就是history.state。这样我们只要保持URL和history.state一一对应，就能保证URL和内容一一对应。大部分情况下URL和history.state都是一一对应的，但通过直接URL访问页面的方式进入页面，history.state是null，所以我们需要把URL转换成对应的history.state写入。我们不能直接写入history.state，需要通过replaceState的方式写入。对于不支持pushstate的浏览器，一律修改href跳转页面，等同于直接访问URL。示意图如下。 
+
+分类: 前端
+标签: pushState, html5
