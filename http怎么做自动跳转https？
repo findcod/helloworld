@@ -1,0 +1,90 @@
+https://bbs.wosign.com/thread-46-1-1.html
+本帖最后由 14911602-123 于 2016-5-5 09:23 编辑
+
+
+APache 版本
+
+如果需要整站跳转，则在网站的配置文件的<Directory>标签内，键入以下内容：
+RewriteEngine on
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule ^(.*)?$ https://%{SERVER_NAME}/$1 [L,R]
+复制代码
+如果对某个目录做https强制跳转，则复制以下代码：
+RewriteEngine on
+RewriteBase /yourfolder
+RewriteCond %{SERVER_PORT} !^443$
+#RewriteRule ^(.*)?$ https://%{SERVER_NAME}/$1 [L,R]
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
+复制代码
+如果只需要对某个网页进行https跳转，可以使用redirect 301来做跳转！redirect 301  /你的网页 https://你的主机+网页
+
+Nginx版本
+
+在配置80端口的文件里面，写入以下内容即可。
+server {
+        listen       80;
+        server_name  localhost;
+       rewrite ^(.*)$ https://$host$1 permanent;    
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+        }
+复制代码
+IIS 版本
+
+使用url重定向实现全站跳转，请查阅：https://bbs.wosign.com/forum.php ... ge=1&extra=#pid5663
+
+TOMCAT 版本
+
+1、在conf目录下的server.xml文件中找到以下配置，修改redirectPort参数值为"443"，默认是“8443”.
+<Connector port="80" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="443" />
+复制代码
+2、在conf目录下的web.xml文件内容<web-app>……</web-app>中增加以下配置。
+<web-app>
+.........
+<security-constraint>
+    <web-resource-collection >        
+   <web-resource-name >SSL</web-resource-name>     
+   <url-pattern>/*</url-pattern>
+       </web-resource-collection>    
+       <user-data-constraint>
+<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+       </user-data-constraint>
+</security-constraint>
+</web-app>
+复制代码
+
+单独页面通用代码段：以下方法较适合指定某一个子页单独https
+在需要强制为https的页面上加入以下代码进行处理http-->https
+<script type="text/javascript">
+        var url = window.location.href;
+        if (url.indexOf("https") < 0) {
+        url = url.replace("http:", "https:");
+        window.location.replace(url);
+        }
+</script>
+复制代码
+
+在需要强制为http的页面上加入以下代码进行处理
+https-->http
+<script language="JavaScript" type="text/JavaScript">
+function redirect()
+{  
+  var loc = location.href.split(':');
+  if(loc[0]=='https')
+        {  
+        location.href='http:'+loc[1];  
+        }
+}                      
+onload=redirect  
+</script> 
+复制代码
+PHP页面跳转：添加在网站php页面内
+if ($_SERVER["HTTPS"] <> "on") 
+{ 
+$xredir="https://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]; 
+header("Location: ".$xredir); 
+}
+复制代码
+http跳转https的方法较多，以上仅供参考。
