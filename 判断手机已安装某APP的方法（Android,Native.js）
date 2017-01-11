@@ -1,0 +1,40 @@
+判断手机已安装某APP的方法（Android,Native.js）
+
+原生实现
+
+private boolean isAvilible(Context context, String packageName){ 
+          //获取packagemanager 
+          final PackageManager packageManager = context.getPackageManager();
+          //获取所有已安装程序的包信息 
+          List< packageInfo> pinfo = packageManager.getInstalledPackages(0);
+          //用于存储所有已安装程序的包名 
+          List<String> pName = new ArrayList<String>();
+         //从pinfo中将包名字逐一取出，压入pName list中 
+         if(pinfo != null){ 
+              for(int i = 0; i < pinfo.size(); i++){ 
+                  String pn = pinfo.get(i).packageName; 
+                  pName.add(pn); 
+              } 
+          } 
+          //判断pName中是否有目标程序的包名，有TRUE，没有FALSE 
+          return pName.contains(packageName);
+    } 
+Native.js
+
+var isAvilible = function(pkgname) {
+        plus.android.importClass('java.util.ArrayList');
+        plus.android.importClass('android.content.pm.PackageInfo');
+        plus.android.importClass('android.content.pm.PackageManager');
+        var MainActivity = plus.android.runtimeMainActivity();
+        var PackageManager = MainActivity.getPackageManager();
+        var pinfo = plus.android.invoke(PackageManager, 'getInstalledPackages', 0)
+        if (pinfo != null) {
+            for (i = 0; i < pinfo.size(); i++) {
+                //PackageInfo{4b45699f9d  com.tencent.mobileqq}
+                if (pinfo.get(i).toString().indexOf(pkgname) !== -1) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
