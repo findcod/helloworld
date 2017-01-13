@@ -1,0 +1,442 @@
+http://blog.sina.com.cn/s/blog_896994ae01014gmt.html
+
+
+
+
+String
+ADD_SHORTCUT_ACTION
+动作：在系统中添加一个快捷方式。.
+"android.intent.action.ADD_SHORTCUT"
+String
+ALL_APPS_ACTION
+动作：列举所有可用的应用。
+输入：无。
+"android.intent.action.ALL_APPS"
+String
+ALTERNATIVE_CATEGORY
+类别：说明 activity 是用户正在浏览的数据的一个可选操作。
+"android.intent.category.ALTERNATIVE"
+String
+ANSWER_ACTION
+动作：处理拨入的电话。
+"android.intent.action.ANSWER"
+String
+BATTERY_CHANGED_ACTION
+广播：充电状态，或者电池的电量发生变化。
+"android.intent.action.BATTERY_CHANGED"
+String
+BOOT_COMPLETED_ACTION
+广播：在系统启动后，这个动作被广播一次（只有一次）。
+"android.intent.action.BOOT_COMPLETED"
+String
+BROWSABLE_CATEGORY
+类别：能够被浏览器安全使用的 activities 必须支持这个类别。
+"android.intent.category.BROWSABLE"
+String
+BUG_REPORT_ACTION
+动作：显示 activity 报告错误。
+"android.intent.action.BUG_REPORT"
+String
+CALL_ACTION
+动作：拨打电话，被呼叫的联系人在数据中指定。
+"android.intent.action.CALL"
+String
+CALL_FORWARDING_STATE_CHANGED_ACTION
+广播：语音电话的呼叫转移状态已经改变。
+"android.intent.action.CFF"
+String
+CLEAR_CREDENTIALS_ACTION
+动作：清除登陆凭证 (credential)。
+"android.intent.action.CLEAR_CREDENTIALS"
+String
+CONFIGURATION_CHANGED_ACTION
+广播：设备的配置信息已经改变，参见 Resources.Configuration.
+"android.intent.action.CONFIGURATION_CHANGED"
+Creator
+CREATOR
+无
+无
+String
+DATA_ACTIVITY_STATE_CHANGED_ACTION
+广播：电话的数据活动(data activity)状态（即收发数据的状态）已经改变。
+"android.intent.action.DATA_ACTIVITY"
+String
+DATA_CONNECTION_STATE_CHANGED_ACTION
+广播：电话的数据连接状态已经改变。
+"android.intent.action.DATA_STATE"
+String
+DATE_CHANGED_ACTION
+广播：日期被改变。
+"android.intent.action.DATE_CHANGED"
+String
+DEFAULT_ACTION
+动作：和 VIEW_ACTION 相同，是在数据上执行的标准动作。
+"android.intent.action.VIEW"
+String
+DEFAULT_CATEGORY
+类别：如果 activity 是对数据执行确省动作（点击, center press）的一个选项，需要设置这个类别。
+"android.intent.category.DEFAULT"
+String
+DELETE_ACTION
+动作：从容器中删除给定的数据。
+"android.intent.action.DELETE"
+String
+DEVELOPMENT_PREFERENCE_CATEGORY
+类别：说明 activity 是一个设置面板 (development preference panel).
+"android.intent.category.DEVELOPMENT_PREFERENCE"
+String
+DIAL_ACTION
+动作：拨打数据中指定的电话号码。
+"android.intent.action.DIAL"
+String
+EDIT_ACTION
+动作：为制定的数据显示可编辑界面。
+"android.intent.action.EDIT"
+String
+EMBED_CATEGORY
+类别：能够在上级（父）activity 中运行。
+"android.intent.category.EMBED"
+String
+EMERGENCY_DIAL_ACTION
+动作：拨打紧急电话号码。
+"android.intent.action.EMERGENCY_DIAL"
+int
+FORWARD_RESULT_LAUNCH
+启动标记：如果这个标记被设置，而且被一个已经存在的 activity 用来启动新的 activity，已有 activity 的回复目标 (reply target) 会被转移给新的 activity。
+16 0x00000010
+String
+FOTA_CANCEL_ACTION
+广播：取消所有被挂起的 (pending) 更新下载。
+"android.server.checkin.FOTA_CANCEL"
+String
+FOTA_INSTALL_ACTION
+广播：更新已经被确认，马上就要开始安装。
+"android.server.checkin.FOTA_INSTALL"
+String
+FOTA_READY_ACTION
+广播：更新已经被下载，可以开始安装。
+"android.server.checkin.FOTA_READY"
+String
+FOTA_RESTART_ACTION
+广播：恢复已经停止的更新下载。
+"android.server.checkin.FOTA_RESTART"
+String
+FOTA_UPDATE_ACTION
+广播：通过 OTA 下载并安装操作系统更新。
+"android.server.checkin.FOTA_UPDATE"
+String
+FRAMEWORK_INSTRUMENTATION_TEST_CATEGORY
+类别：To be used as code under test for framework instrumentation tests.
+"android.intent.category.FRAMEWORK_INSTRUMENTATION_TEST"
+String
+GADGET_CATEGORY
+类别：这个 activity 可以被嵌入宿主 activity (activity that is hosting gadgets)。
+"android.intent.category.GADGET"
+String
+GET_CONTENT_ACTION
+动作：让用户选择数据并返回。
+"android.intent.action.GET_CONTENT"
+String
+HOME_CATEGORY
+类别：主屏幕 (activity)，设备启动后显示的第一个 activity。
+"android.intent.category.HOME"
+String
+INSERT_ACTION
+动作：在容器中插入一个空项 (item)。
+"android.intent.action.INSERT"
+String
+INTENT_EXTRA
+附加数据：和 PICK_ACTIVITY_ACTION 一起使用时，说明用户选择的用来显示的 activity；和 ADD_SHORTCUT_ACTION 一起使用的时候，描述要添加的快捷方式。
+"android.intent.extra.INTENT"
+String
+LABEL_EXTRA
+附加数据：大写字母开头的字符标签，和 ADD_SHORTCUT_ACTION 一起使用。
+"android.intent.extra.LABEL"
+String
+LAUNCHER_CATEGORY
+类别：Activity 应该被显示在顶级的 launcher 中。
+"android.intent.category.LAUNCHER"
+String
+LOGIN_ACTION
+动作：获取登录凭证。
+"android.intent.action.LOGIN"
+String
+MAIN_ACTION
+动作：作为主入口点启动，不需要数据。
+"android.intent.action.MAIN"
+String
+MEDIABUTTON_ACTION
+广播：用户按下了“Media Button”。
+"android.intent.action.MEDIABUTTON"
+String
+MEDIA_BAD_REMOVAL_ACTION
+广播：扩展介质（扩展卡）已经从 SD 卡插槽拔出，但是挂载点 (mount point) 还没解除 (unmount)。
+"android.intent.action.MEDIA_BAD_REMOVAL"
+String
+MEDIA_EJECT_ACTION
+广播：用户想要移除扩展介质（拔掉扩展卡）。
+"android.intent.action.MEDIA_EJECT"
+String
+MEDIA_MOUNTED_ACTION
+广播：扩展介质被插入，而且已经被挂载。
+"android.intent.action.MEDIA_MOUNTED"
+String
+MEDIA_REMOVED_ACTION
+广播：扩展介质被移除。
+"android.intent.action.MEDIA_REMOVED"
+String
+MEDIA_SCANNER_FINISHED_ACTION
+广播：已经扫描完介质的一个目录。
+"android.intent.action.MEDIA_SCANNER_FINISHED"
+String
+MEDIA_SCANNER_STARTED_ACTION
+广播：开始扫描介质的一个目录。
+"android.intent.action.MEDIA_SCANNER_STARTED"
+String
+MEDIA_SHARED_ACTION
+广播：扩展介质的挂载被解除 (unmount)，因为它已经作为 USB 大容量存储被共享。
+"android.intent.action.MEDIA_SHARED"
+String
+MEDIA_UNMOUNTED_ACTION
+广播：扩展介质存在，但是还没有被挂载 (mount)。
+"android.intent.action.MEDIA_UNMOUNTED"
+String
+MESSAGE_WAITING_STATE_CHANGED_ACTION
+广播：电话的消息等待（语音邮件）状态已经改变。
+"android.intent.action.MWI"
+int
+MULTIPLE_TASK_LAUNCH
+启动标记：和 NEW_TASK_LAUNCH 联合使用，禁止将已有的任务改变为前景任务 (foreground)。
+8 0x00000008
+String
+NETWORK_TICKLE_RECEIVED_ACTION
+广播：设备收到了新的网络 "tickle" 通知。
+"android.intent.action.NETWORK_TICKLE_RECEIVED"
+int
+NEW_TASK_LAUNCH
+启动标记：设置以后，activity 将成为历史堆栈中的第一个新任务（栈顶）。
+4 0x00000004
+int
+NO_HISTORY_LAUNCH
+启动标记：设置以后，新的 activity 不会被保存在历史堆栈中。
+1 0x00000001
+String
+PACKAGE_ADDED_ACTION
+广播：设备上新安装了一个应用程序包。
+"android.intent.action.PACKAGE_ADDED"
+String
+PACKAGE_REMOVED_ACTION
+广播：设备上删除了一个应用程序包。
+"android.intent.action.PACKAGE_REMOVED"
+String
+PHONE_STATE_CHANGED_ACTION
+广播：电话状态已经改变。
+"android.intent.action.PHONE_STATE"
+String
+PICK_ACTION
+动作：从数据中选择一个项目 (item)，将被选中的项目返回。
+"android.intent.action.PICK"
+String
+PICK_ACTIVITY_ACTION
+动作：选择一个 activity，返回被选择的 activity 的类（名）。
+"android.intent.action.PICK_ACTIVITY"
+String
+PREFERENCE_CATEGORY
+类别：activity是一个设置面板 (preference panel)。
+"android.intent.category.PREFERENCE"
+String
+PROVIDER_CHANGED_ACTION
+广播：更新将要（真正）被安装。
+"android.intent.action.PROVIDER_CHANGED"
+String
+PROVISIONING_CHECK_ACTION
+广播：要求 polling of provisioning service 下载最新的设置。
+"android.intent.action.PROVISIONING_CHECK"
+String
+RUN_ACTION
+动作：运行数据（指定的应用），无论它（应用）是什么。
+"android.intent.action.RUN"
+String
+SAMPLE_CODE_CATEGORY
+类别：To be used as an sample code example (not part of the normal user experience).
+"android.intent.category.SAMPLE_CODE"
+String
+SCREEN_OFF_ACTION
+广播：屏幕被关闭。
+"android.intent.action.SCREEN_OFF"
+String
+SCREEN_ON_ACTION
+广播：屏幕已经被打开。
+"android.intent.action.SCREEN_ON"
+String
+SELECTED_ALTERNATIVE_CATEGORY
+类别：对于被用户选中的数据，activity 是它的一个可选操作。
+"android.intent.category.SELECTED_ALTERNATIVE"
+String
+SENDTO_ACTION
+动作：向 data 指定的接收者发送一个消息。
+"android.intent.action.SENDTO"
+String
+SERVICE_STATE_CHANGED_ACTION
+广播：电话服务的状态已经改变。
+"android.intent.action.SERVICE_STATE"
+String
+SETTINGS_ACTION
+动作：显示系统设置。输入：无。
+"android.intent.action.SETTINGS"
+String
+SIGNAL_STRENGTH_CHANGED_ACTION
+广播：电话的信号强度已经改变。
+"android.intent.action.SIG_STR"
+int
+SINGLE_TOP_LAUNCH
+启动标记：设置以后，如果 activity 已经启动，而且位于历史堆栈的顶端，将不再启动（不重新启动） activity。
+2 0x00000002
+String
+STATISTICS_REPORT_ACTION
+广播：要求 receivers 报告自己的统计信息。
+"android.intent.action.STATISTICS_REPORT"
+String
+STATISTICS_STATE_CHANGED_ACTION
+广播：统计信息服务的状态已经改变。
+"android.intent.action.STATISTICS_STATE_CHANGED"
+String
+SYNC_ACTION
+动作：执行数据同步。
+"android.intent.action.SYNC"
+String
+TAB_CATEGORY
+类别：这个 activity 应该在 TabActivity 中作为一个 tab 使用。
+"android.intent.category.TAB"
+String
+TEMPLATE_EXTRA
+附加数据：新记录的初始化模板。
+"android.intent.extra.TEMPLATE"
+String
+TEST_CATEGORY
+类别：作为测试目的使用，不是正常的用户体验的一部分。
+"android.intent.category.TEST"
+String
+TIMEZONE_CHANGED_ACTION
+广播：时区已经改变。
+"android.intent.action.TIMEZONE_CHANGED"
+String
+TIME_CHANGED_ACTION
+广播：时间已经改变（重新设置）。
+"android.intent.action.TIME_SET"
+String
+TIME_TICK_ACTION
+广播：当前时间已经变化（正常的时间流逝）。
+"android.intent.action.TIME_TICK"
+String
+UMS_CONNECTED_ACTION
+广播：设备进入 USB 大容量存储模式。
+"android.intent.action.UMS_CONNECTED"
+String
+UMS_DISCONNECTED_ACTION
+广播：设备从 USB 大容量存储模式退出。
+"android.intent.action.UMS_DISCONNECTED"
+String
+UNIT_TEST_CATEGORY
+类别：应该被用作单元测试（通过 test harness 运行）。
+"android.intent.category.UNIT_TEST"
+String
+VIEW_ACTION
+动作：向用户显示数据。
+"android.intent.action.VIEW"
+String
+WALLPAPER_CATEGORY
+类别：这个 activity 能过为设备设置墙纸。
+"android.intent.category.WALLPAPER"
+String
+WALLPAPER_CHANGED_ACTION
+广播：系统的墙纸已经改变。
+"android.intent.action.WALLPAPER_CHANGED"
+String
+WALLPAPER_SETTINGS_ACTION
+动作：显示选择墙纸的设置界面。输入：无。
+"android.intent.action.WALLPAPER_SETTINGS"
+String
+WEB_SEARCH_ACTION
+动作：执行 web 搜索。
+"android.intent.action.WEB_SEARCH"
+String
+XMPP_CONNECTED_ACTION
+广播：XMPP 连接已经被建立。
+"android.intent.action.XMPP_CONNECTED"
+String
+XMPP_DISCONNECTED_ACTION
+广播：XMPP 连接已经被断开。
+"android.intent.action.XMPP_DI
+ 
+ 
+ 
+权限表
+public static final String BROADCAST_PACKAGE_REMOVED
+允许应用程序发出一个应用程序被删除的通知。
+常量值： "android.permission.BROADCAST_PACKAGE_REMOVED"
+
+public static final String CALL_PHONE
+允许应用程序发起一个电话呼叫而不需要经拨号器用户界面确认。
+常量值： "android.permission.CALL_PHONE"
+
+public static final String DUMP
+允许应用程序从系统服务获取状态存储信息。
+常量值： "android.permission.DUMP"
+
+public static final String FOTA_UPDATE
+常量值： "android.permission.FOTA_UPDATE"
+
+public static final String GET_TASKS
+允许应用程序获得当前运行任务的信息：任务的简短描述，运行着什么activity等。
+常量值： "android.permission.GET_TASKS"
+
+public static final String INSTALL_PACKAGES
+允许应用程序安装包。
+常量值： "android.permission.INSTALL_PACKAGES"
+
+public static final String INTERNAL_SYSTEM_WINDOW
+允许应用程序打开作为系统用户界面的一部分的窗口。
+常量值： "android.permission.INTERNAL_SYSTEM_WINDOW"
+
+public static final String RAISED_THREAD_PRIORITY
+允许应用程序获取提升的线程优先级，例如实时音频重放。
+常量值： "android.permission.RAISED_THREAD_PRIORITY"
+
+public static final String READ_CONTACTS
+允许应用程序当前用户的通讯录数据。
+常量值： "android.permission.READ_CONTACTS"
+
+public static final String RECEIVE_SMS
+允许应用程序监听收到的短信，并对短信进行记录或执行操作。
+常量值： "android.permission.RECEIVE_SMS"
+
+public static final String RECEIVE_WAP_PUSH
+允许应用程序监听提过WAP push进来的信息。
+常量值： "android.permission.RECEIVE_WAP_PUSH"
+
+public static final String RUN_INSTRUMENTATION
+允许应用程序开始运行某个包。
+常量值： "android.permission.RUN_INSTRUMENTATION"
+
+public static final String SET_ACTIVITY_WATCHER
+允许应用程序监视和控制Activity如何在系统中启动。尽在调试状态(通常是monkey命令)下可用。
+常量值： "android.permission.SET_ACTIVITY_WATCHER"
+
+public static final String SIGNAL_PERSISTENT_PROCESSES
+允许应用程序请求一个发给所有固有进程的信号。
+常量值： "android.permission.SIGNAL_PERSISTENT_PROCESSES"
+
+public static final String SYSTEM_ALERT_WINDOW
+允许应用程序使用SYSTEM_ALERT_TYPE类型在所有其他应用程序之上显示窗口很少有程序用到这个许可；这些窗口与用户进行系统级的交互。
+常量值： "android.permission.SYSTEM_ALERT_WINDOW"
+
+public static final String WRITE_CONTACTS
+允许应用程序写入(不能读取)用户的通讯录数据。
+常量值： "android.permission.WRITE_CONTACTS"
+
+public static final String WRITE_SETTINGS
+允许应用程序读写用户的通讯录数据。
+常量值： "android.permission.WRITE_SETTINGS"
+构造函数
+public Manifest.permission()
