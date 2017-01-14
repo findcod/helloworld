@@ -1,0 +1,5 @@
+https://my.oschina.net/javaTechLover/blog/341690
+
+Here is what i encountered: android.content.ActivityNotFoundException: No Activity found to handle Intent { act=me.waye.intentdemo.intent.action.WAYE_ACTION cat=[me.waye.intentdemo.intent.category.WAYE_CATEGORY] } 在学习隐式启动Activity的时候遇到这个错误，用的书是李刚的疯狂Android讲义,书上没有提到这个问题,通过看文档发现了答案:
+Android treats all implicit intents passed to startActivity() as if they contained at least one category: " android.intent.category.DEFAULT" (the CATEGORY_DEFAULT constant). Therefore, activities that are willing to receive implicit intents must include " android.intent.category.DEFAULT" in their intent filters. (Filters with " android.intent.action.MAIN" and " android.intent.category.LAUNCHER" settings are the exception. They mark activities that begin new tasks and that are represented on the launcher screen. They can include " android.intent.category.DEFAULT" in the list of categories, but don't need to.) See Using intent matching, later, for more on these filters.)
+能接受隐式Intent的Activity必须包含android.intent.category.DEFAULT,但LAUNCHER和MAIN例外，可以不用加，也可以加上但没有这个必要。  
