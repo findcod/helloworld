@@ -1,0 +1,48 @@
+1.centos 安装 EPEL源的方法: yum install epel-release 
+2.CentOS 7 firewalld使用简介  http://www.centoscn.com/CentOS/help/2015/0208/4667.html
+certbot certonly --email fuzzyy@foxmail.com --agree-tos --webroot -w /var/www/erp -d erp.hunglam.cn
+/etc/letsencrypt/live/erp.hunglam.cn/fullchain.pem
+/etc/letsencrypt/live/erp.hunglam.cn/privkey.pem
+yum install openssl mod_ssl -y  SSL 模块
+<VirtualHost erp.hunglam.cn:443>
+        DocumentRoot /var/www/erp
+        ServerName erp.hunglam.cn
+        SSLEngine on
+        SSLCertificateFile /etc/letsencrypt/live/erp.hunglam.cn/fullchain.pem
+        SSLCertificateKeyFile /etc/letsencrypt/live/erp.hunglam.cn/privkey.pem
+</VirtualHost>
+
+最后生成文件
+cert.pem  chain.pem  fullchain.pem  privkey.pem
+在线检查SSL合法性
+https://www.ssllabs.com/ssltest/analyze.html?d=erp.hunglam.cn&latest
+/etc/letsencrypt/lets-encrypt-x1-cross-signed.pem
+
+
+http://blog.csdn.net/github_26672553/article/details/53184335 APACHE注意事项
+
+NameVirtualHost 120.76.167.112
+NameVirtualHost erp.hunglam.cn:443
+<VirtualHost 120.76.167.112>
+    DocumentRoot /var/www/html
+    ServerName wx.hunglam.cn
+</VirtualHost>
+<VirtualHost 120.76.167.112>
+    DocumentRoot /var/www/cash
+    ServerName cash.hunglam.cn
+</VirtualHost>
+<VirtualHost 120.76.167.112>
+    DocumentRoot /var/www/erp
+    ServerName erp.hunglam.cn
+</VirtualHost>
+<VirtualHost erp.hunglam.cn:443>
+        DocumentRoot /var/www/erp
+        ServerName erp.hunglam.cn
+        SSLEngine on
+		SSLProtocol all -SSLv2 -SSLv3
+        SSLHonorCipherOrder On
+        SSLCipherSuite "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !RC4"
+        SSLCertificateFile /etc/letsencrypt/live/erp.hunglam.cn/cert.pem
+        SSLCertificateKeyFile /etc/letsencrypt/live/erp.hunglam.cn/privkey.pem
+        SSLCertificateChainFile /etc/letsencrypt/live/erp.hunglam.cn/chain.pem
+</VirtualHost>
