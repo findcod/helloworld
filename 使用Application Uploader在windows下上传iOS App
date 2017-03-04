@@ -1,0 +1,35 @@
+我们知道发布一个app，一般是用到苹果的application loader助手上传应用，用过的都知道使用起来很繁琐，经常出错。而且只能运行在mac系统上，需要一定的硬件条件。
+
+前段时间逛国外技术论坛，发现了一个上架的辅助工具Application Uploader，可以实现在windows，linux或mac上，不需要应用程序加载器和mac计算机，就可以发布app到app store，试用了下，感觉不错，分享给各位开发者，方便大家。
+
+Application Uploader是一个专门为IOS app上架的开发助手，可以快速，轻松地生成ios开发证书，不需要钥匙串助手; Application Uploader还可以批量上传屏幕截图并将ipa文件上传到Apple商店。很方便的生成证书和配置文件的，快速的上架app，提升效率的辅助工具，很方便。
+
+
+有几个实用的功能点
+
+1、iOS证书和配置文件管理
+
+Application Uploader支持创建各种Apple证书，并且创建过程非常简单，只需输入证书名称，创建邮箱等信息即可创建证书。
+
+2、在Windows，Linux或Mac中提交Ipa
+
+通过Application Uploader，您可以在windows，mac或linux中将一个或多个ipa文件上传到appstore，故障的概率将大大降低; 通过mac中的应用程序加载器上传，并且经常上传失败的情况。 使用Application Uploader ipa文件，上传快速，成功率高。
+
+3、批量上传屏幕截图和更新APP信息
+
+提交屏幕截图到itunesconnect是一件非常麻烦的事情，不得不上传几十个屏幕截图，重复沉闷。使用Application Uploader上传屏幕截图可以打包上传
+
+4、一次更新多个IOS应用程序
+
+使用Application Uploader工具可以一次上传多个应用程序到ios appstore。
+
+5、使用模板更新程序
+
+使用Application Uploader模板更新app关键字，标题，说明，屏幕或其他应用信息更加的便捷，效率大升。
+
+6、更新应用程序说明
+
+一般我们只更新appstore信息描述和关键字，使用Application Uploader可以使用模板进行详细更新。
+
+结语
+Application Uploader这个工具，可以帮助我们上架iOS App，自动化方便快速，跨平台开发者利用这个工具将十分便利，在win系统下就能上架app。
