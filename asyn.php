@@ -9,7 +9,7 @@
 function triggerRequest($url, $post_data = array(), $cookie = array())
 {
     $method = "GET";  //可以通过POST或者GET传递一些参数给要触发的脚本
-    $url_array = parse_url($url); //获取URL信息，以便平凑HTTP HEADER
+    $url_array = parse_url($url); //获取URL信息，以便拼凑HTTP HEADER
     $port = isset($url_array['port']) ? $url_array['port'] : 80;
     $fp = fsockopen($url_array['host'], $port, $errno, $errstr, 30);
     if (!$fp) {
