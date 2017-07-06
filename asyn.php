@@ -1,8 +1,7 @@
 <?php
-
-
   /**
  * 异步执行函数
+   * POST有异常
  * @param $url
  * @param array $post_data
  * @param array $cookie
